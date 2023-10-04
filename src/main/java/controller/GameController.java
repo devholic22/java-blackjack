@@ -72,7 +72,7 @@ public class GameController {
 
     private void alertDealerCard() {
 
-        if (players.dealerScoreEnough(DEALER.getValue(), DEALER_MORE_SCORE.getValue())) {
+        if (players.isEnoughThanDealerScore(DEALER.getValue(), DEALER_MORE_SCORE.getValue())) {
             AlertView.alertDealerEnough(DEALER.getValue(), DEALER_MORE_SCORE.getValue());
             return;
         }
