@@ -17,6 +17,14 @@ public enum Keyword {
         this.value = value;
     }
 
+    public static boolean isValidCommand(final String command) {
+        return command.equals(YES.getValue()) || command.equals(NO.getValue());
+    }
+
+    public static boolean isCommandYes(final String command) {
+        return command.equals(YES.getValue());
+    }
+
     public String getValue() {
         return value;
     }
