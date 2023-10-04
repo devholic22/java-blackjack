@@ -6,7 +6,6 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 import static util.Keyword.ACE;
-import static util.Keyword.BLANK;
 import static util.Keyword.DEALER;
 import static util.Keyword.NAME_SPLITTER;
 
@@ -46,18 +45,11 @@ public class Name {
     }
 
     public static String chainingNames(List<Name> names) {
-        StringBuilder stringBuilder = new StringBuilder();
-        names.forEach(name -> stringBuilder
-                .append(name.getName())
-                .append(NAME_SPLITTER.getValue())
-                .append(BLANK.getValue()));
+        List<String> nameValues = names.stream()
+                .map(Name::getName)
+                .collect(Collectors.toList());
 
-        String chainingName = stringBuilder.toString();
-        return eraseLastMark(chainingName);
-    }
-
-    private static String eraseLastMark(final String chainingName) {
-        return chainingName.substring(0, chainingName.length() - (NAME_SPLITTER.length() + BLANK.length()));
+        return String.join(", ", nameValues);
     }
 
     public static boolean isAce(Name value) {
