@@ -36,11 +36,11 @@ public class CardFactory {
         return Cards.from(cards);
     }
 
-    public static List<Card> createNormalCards(int score) {
+    public static List<Card> createNormalCards(final int score) {
         return createNormalCardsWithScore(score, CARD_TYPES);
     }
 
-    private static List<Card> createNormalCardsWithScore(int score, final List<String> names) {
+    private static List<Card> createNormalCardsWithScore(final int score, final List<String> names) {
         List<Name> cardNames = Name.convertStringListToNamesWithScore(score, names);
 
         return cardNames.stream()
@@ -49,7 +49,7 @@ public class CardFactory {
                 .collect(Collectors.toList());
     }
 
-    public static List<Card> createSpecialCards(String special, int score) {
+    public static List<Card> createSpecialCards(final String special, int score) {
         return createSpecialCards(special, CARD_TYPES, score);
     }
 

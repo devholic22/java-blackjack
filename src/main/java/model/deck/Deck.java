@@ -37,7 +37,7 @@ public class Deck {
         }
     }
 
-    public List<Card> getCardsFromDeckAsMuchAs(int count) {
+    public List<Card> getCardsFromDeckAsMuchAs(final int count) {
         return IntStream.range(0, count)
                 .mapToObj(x -> getRandomCardFromDeck(new DiceImpl()))
                 .collect(Collectors.toList());

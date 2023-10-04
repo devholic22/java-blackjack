@@ -24,7 +24,7 @@ public class Cards {
         return new Cards(new ArrayList<>());
     }
 
-    public void addCards(List<Card> newCards) {
+    public void addCards(final List<Card> newCards) {
         cards.addAll(newCards);
     }
 
@@ -48,7 +48,7 @@ public class Cards {
                 .ifPresent(Card::downScore);
     }
 
-    public Card useCard(int index) {
+    public Card useCard(final int index) {
         if (index < cards.size()) {
             Card card = cards.get(index);
             cards.remove(index);

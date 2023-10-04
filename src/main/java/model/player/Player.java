@@ -24,11 +24,11 @@ public class Player {
         return new Player(name, cards);
     }
 
-    public void addCards(List<Card> card) {
+    public void addCards(final List<Card> card) {
         cards.addCards(card);
     }
 
-    public void writeGrade(int grade) {
+    public void writeGrade(final int grade) {
         this.grade = grade;
     }
 

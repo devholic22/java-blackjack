@@ -49,11 +49,11 @@ public class PlayerResponse {
                 .collect(Collectors.toList());
     }
 
-    public boolean isUpThanDealer(PlayerResponse dealer) {
+    public boolean isUpThanDealer(final PlayerResponse dealer) {
         return grade < dealer.getGrade();
     }
 
-    public boolean isSameWithDealer(PlayerResponse dealer) {
+    public boolean isSameWithDealer(final PlayerResponse dealer) {
         return grade == dealer.getGrade();
     }
 

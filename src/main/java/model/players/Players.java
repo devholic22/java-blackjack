@@ -33,7 +33,7 @@ public class Players {
         return new Players(players);
     }
 
-    private static List<Player> joinPlayers(String input) {
+    private static List<Player> joinPlayers(final String input) {
         List<String> splitNames = Name.createSplitNameValues(input);
 
         return splitNames.stream()
@@ -58,7 +58,7 @@ public class Players {
         return Name.chainingNames(names);
     }
 
-    public void giveInitialCards(Deck deck, int count) {
+    public void giveInitialCards(final Deck deck, final int count) {
         players.forEach(player -> {
             List<Card> initCards = deck.getCardsFromDeckAsMuchAs(count);
             Cards cards = Cards.from(initCards);
@@ -113,13 +113,13 @@ public class Players {
                 .collect(Collectors.toList());
     }
 
-    public List<PlayerResponse> calculateEachGradeWithGoal(int goal) {
+    public List<PlayerResponse> calculateEachGradeWithGoal(final int goal) {
         List<Player> orderedPlayers = getPlayersOrderByDistance(goal);
 
         return eachPlayerWriteGrade(orderedPlayers, goal);
     }
 
-    private List<Player> getPlayersOrderByDistance(int goal) {
+    private List<Player> getPlayersOrderByDistance(final int goal) {
         return players.stream()
                 .sorted(Comparator.comparing(response -> response.getDistance(goal)))
                 .collect(Collectors.toList());
@@ -136,7 +136,7 @@ public class Players {
                 .collect(Collectors.toList());
     }
 
-    public int getDealerWin(int grade) {
+    public int getDealerWin(final int grade) {
         AtomicInteger win = new AtomicInteger();
 
         List<PlayerResponse> playerResponses = getPlayerResponsesExceptDealer();
@@ -150,7 +150,7 @@ public class Players {
         return win.get();
     }
 
-    public int getDealerSame(int grade) {
+    public int getDealerSame(final int grade) {
         AtomicInteger same = new AtomicInteger();
 
         List<PlayerResponse> playerResponses = getPlayerResponsesExceptDealer();
@@ -164,7 +164,7 @@ public class Players {
         return same.get();
     }
 
-    public int getDealerLose(int grade) {
+    public int getDealerLose(final int grade) {
         AtomicInteger lose = new AtomicInteger();
 
         List<PlayerResponse> playerResponses = getPlayerResponsesExceptDealer();

@@ -37,14 +37,14 @@ public class Name {
                 .collect(Collectors.toList());
     }
 
-    public static List<String> createSplitNameValues(String input) {
+    public static List<String> createSplitNameValues(final String input) {
         return Arrays.stream(input.split(NAME_SPLITTER.getValue()))
                 .map(String::trim)
                 .distinct()
                 .collect(Collectors.toList());
     }
 
-    public static String chainingNames(List<Name> names) {
+    public static String chainingNames(final List<Name> names) {
         List<String> nameValues = names.stream()
                 .map(Name::getName)
                 .collect(Collectors.toList());
@@ -52,7 +52,7 @@ public class Name {
         return String.join(", ", nameValues);
     }
 
-    public static boolean isAce(Name value) {
+    public static boolean isAce(final Name value) {
         String valueName = value.getName();
         return valueName.startsWith(ACE.getValue());
     }
