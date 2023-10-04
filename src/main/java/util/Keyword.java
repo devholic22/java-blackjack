@@ -4,7 +4,6 @@ public enum Keyword {
 
     DEALER("딜러"),
     NAME_SPLITTER(","),
-    BLANK(" "),
     YES("y"),
     NO("n"),
     WIN("승"),
