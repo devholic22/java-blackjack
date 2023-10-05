@@ -2,6 +2,9 @@ package view;
 
 public class AlertView {
 
+    private AlertView() {
+    }
+
     public static void alertGiveInitCard(final String dealer, final String names, final int cards) {
         System.out.println(dealer + "와 " + names + "에게 " + cards + "장을 나누었습니다.");
         System.out.println();

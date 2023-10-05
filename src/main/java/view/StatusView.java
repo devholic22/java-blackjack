@@ -4,6 +4,9 @@ import static util.Keyword.DEALER;
 
 public class StatusView {
 
+    private StatusView() {
+    }
+
     public static void printPersonDefaultStatus(final String name, final String cardNames) {
         if (name.equals(DEALER.getValue())) {
             System.out.println(dealerDefaultStatus(name, cardNames));

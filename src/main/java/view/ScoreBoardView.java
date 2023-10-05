@@ -6,6 +6,9 @@ import static util.Keyword.WIN;
 
 public class ScoreBoardView {
 
+    private ScoreBoardView() {
+    }
+
     public static void printGrade(final String name, final String grade) {
         System.out.println(name + ": " + grade);
     }
