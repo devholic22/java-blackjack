@@ -33,9 +33,13 @@ public class Player {
     }
 
     public void downScoreIfScoreExceedAndHaveAce() {
-        if (getScore() > GOAL_SCORE.getValue()) {
+        if (isScoreUpperThanGoal()) {
             cards.changeScoreIfHaveAce();
         }
+    }
+
+    private boolean isScoreUpperThanGoal() {
+        return getScore() > GOAL_SCORE.getValue();
     }
 
     public int getScore() {
