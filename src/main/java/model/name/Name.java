@@ -1,13 +1,11 @@
 package model.name;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
 import static util.Keyword.ACE;
 import static util.Keyword.DEALER;
-import static util.Keyword.NAME_SPLITTER;
 
 public class Name {
 
@@ -21,27 +19,8 @@ public class Name {
         return new Name(name);
     }
 
-    public static List<Name> convertStringListToNamesWithScore(final int score, final List<String> names) {
-        return names.stream()
-                .map(name -> Name.withScore(score, name))
-                .collect(Collectors.toList());
-    }
-
-    private static Name withScore(final int score, final String name) {
+    public static Name withScore(final int score, final String name) {
         return new Name(score + name);
-    }
-
-    public static List<Name> convertStringListToNamesWithSpecial(final String special, final List<String> names) {
-        return names.stream()
-                .map(name -> Name.from(special + name))
-                .collect(Collectors.toList());
-    }
-
-    public static List<String> createSplitNameValues(final String input) {
-        return Arrays.stream(input.split(NAME_SPLITTER.getValue()))
-                .map(String::trim)
-                .distinct()
-                .collect(Collectors.toList());
     }
 
     public static String chainingNames(final List<Name> names) {

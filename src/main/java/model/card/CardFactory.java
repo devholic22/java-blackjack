@@ -3,6 +3,7 @@ package model.card;
 import model.card.dto.CardRequest;
 import model.cards.Cards;
 import model.name.Name;
+import model.name.Names;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,7 @@ public class CardFactory {
     }
 
     private static List<Card> createNormalCardsWithScore(final int score, final List<String> names) {
-        List<Name> cardNames = Name.convertStringListToNamesWithScore(score, names);
+        List<Name> cardNames = Names.createScoreNameCards(score, names);
 
         return cardNames.stream()
                 .map(cardName -> CardRequest.createDefault(cardName.getName(), score))
@@ -54,7 +55,7 @@ public class CardFactory {
     }
 
     private static List<Card> createSpecialCards(final String special, final List<String> names, int score) {
-        List<Name> cardNames = Name.convertStringListToNamesWithSpecial(special, names);
+        List<Name> cardNames = Names.createSpecialNameCards(special, names);
 
         return cardNames.stream()
                 .map(cardName -> CardRequest.createDefault(cardName.getName(), score))

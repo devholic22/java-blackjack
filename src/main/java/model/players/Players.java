@@ -4,6 +4,7 @@ import model.card.Card;
 import model.cards.Cards;
 import model.deck.Deck;
 import model.name.Name;
+import model.name.Names;
 import model.player.Player;
 import model.player.dto.PlayerRequest;
 import model.player.dto.PlayerResponse;
@@ -34,7 +35,7 @@ public class Players {
     }
 
     private static List<Player> joinPlayers(final String input) {
-        List<String> splitNames = Name.createSplitNameValues(input);
+        List<String> splitNames = Names.createSplitNameValues(input);
 
         return splitNames.stream()
                 .map(PlayerRequest::from)
