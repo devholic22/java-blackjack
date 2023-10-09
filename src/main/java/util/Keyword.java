@@ -25,6 +25,10 @@ public enum Keyword {
         return command.equals(YES.getValue());
     }
 
+    public static boolean isDealer(final String value) {
+        return value.equals(DEALER.getValue());
+    }
+
     public String getValue() {
         return value;
     }

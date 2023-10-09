@@ -1,6 +1,6 @@
 package view;
 
-import static util.Keyword.DEALER;
+import util.Keyword;
 
 public class StatusView {
 
@@ -8,7 +8,7 @@ public class StatusView {
     }
 
     public static void printPersonDefaultStatus(final String name, final String cardNames) {
-        if (name.equals(DEALER.getValue())) {
+        if (Keyword.isDealer(name)) {
             System.out.println(dealerDefaultStatus(name, cardNames));
             return;
         }
