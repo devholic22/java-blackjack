@@ -97,9 +97,9 @@ public class Players {
 
     private Player findByName(final String name) {
         return players.stream()
-                .filter(player -> player.getName().equals(Name.from(name)))
+                .filter(player -> player.isSameName(name))
                 .findFirst()
-                .orElse(null);
+                .orElseThrow(() -> new IllegalStateException("해당 이름을 가진 플레이어가 없습니다."));
     }
 
     public List<String> getPlayerNameValuesExceptDealer() {

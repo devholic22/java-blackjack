@@ -42,6 +42,10 @@ public class Player {
         return getScore() > GOAL_SCORE.getValue();
     }
 
+    public boolean isSameName(String name) {
+        return this.name.isSameAs(name);
+    }
+
     public int getScore() {
         return cards.calculateScore();
     }
