@@ -68,13 +68,9 @@ public class Players {
         });
     }
 
-    private boolean isUnderThanDealerScore(final String dealer, final int score) {
+    public boolean isUnderThanDealerScore(final String dealer, final int score) {
         Player targetDealer = findByName(dealer);
-        return targetDealer.getScore() <= score;
-    }
-
-    public boolean isEnoughThanDealerScore(final String dealer, final int score) {
-        return !isUnderThanDealerScore(dealer, score);
+        return targetDealer.getScore() < score;
     }
 
     public List<PlayerResponse> playersResponse() {
